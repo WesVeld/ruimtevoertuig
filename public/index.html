@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacecraft Control Panel</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="/scripts/scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <img src="/images/rover.png" alt="Spacecraft" />
+        
+        <div id="status">
+            <p>Battery: <span id="batteryStatus">Loading...</span></p>
+            <p>Active Sensors: <span id="sensorList">Loading...</span></p>
+            <p>Resources Found: <span id="resourceList">Loading...</span></p>
+            <p>Movement Status: <span id="movementStatus">Loading...</span></p>
+            <p>Power State: <span id="sleepStatus">Loading...</span></p>
+            <p>Temperature: <span id="tempStatus">Loading...</span>°C</p>
+
+        </div>
+        <div class="input-container">
+            <select id="actionSelect" class="action-dropdown">
+                <option value="">Select Action...</option>
+                <option value="move_forward">Move Forward</option>
+                <option value="move_backward">Move Backward</option>
+                <option value="rotate">Rotate</option>
+                <option value="sensor">Toggle Sensor</option>
+                <option value="sleep">Sleep Mode</option>
+                <option value="scan">Scan for Resources</option>
+
+
+            </select>
+            <input type="text" id="actionDetails" class="details-input" placeholder="Enter details (e.g. Temperature Sensor)">
+            <button onclick="executeAction()">Execute</button>
+        </div>
+        <div class="input-container">
+            <button onclick="executeAction('recharge')" class="recharge-button">Recharge Battery</button>
+        </div>
+    </div>
+</body>
+</html>
